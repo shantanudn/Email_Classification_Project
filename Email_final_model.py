@@ -8,9 +8,10 @@ Created on Wed May 13 16:49:51 2020
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from textblob import TextBlob
 
-dataset = pd.read_csv('emails1.csv')
-df=dataset.iloc[:,3:] # removing first three columns
+df = pd.read_csv('C:/Users/vw178e/Excelr_Project/New_env/Deployment/emails.csv')
+df=df.iloc[:,3:] # removing first three columns
 
 # removing duplicate data
 df.drop_duplicates(subset='content', keep='first', inplace=True)
@@ -38,6 +39,13 @@ lem = WordNetLemmatizer()
 def tokenizer_lemmatizer(text):
     return[lem.lemmatize(word, "v") for word in text.split()]
 
+# =============================================================================
+# Lemmatization functon
+# =============================================================================
+def split_into_lemmas(message):
+    words = TextBlob(message).words
+    # for each word, take its "base form" = lemma 
+    return [word.lemma for word in words]
 
 #Stop words
 from nltk.corpus import stopwords
@@ -126,7 +134,10 @@ X_train.shape, y_train.shape, X_test.shape, y_test.shape
 
 #Vectorization of bag of words
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
-product_bow = CountVectorizer().fit(new_df.content)
+product_bow = CountVectorizer(analyzer=split_into_lemmas).fit(new_df.content)
+ 
+product_bow = CountVectorizer(analyzer=split_into_words).fit(product_data.PDT_DESCRIPTION)
+
 
 X = product_bow.transform(X)
 
