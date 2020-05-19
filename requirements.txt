@@ -15,10 +15,10 @@ joblib==0.14.1
 MarkupSafe==1.1.1
 mkl-fft==1.0.6
 mkl-random==1.0.1
-msgpack==0.6.1
-msgpack-numpy==0.4.3.2
+msgpack==0.6.0
+msgpack-numpy==0.6.0
 murmurhash==1.0.2
-numpy==1.15.4
+numpy==1.17.3
 plac==0.9.6
 pmdarima==1.5.3
 preshed==2.0.1
@@ -26,7 +26,7 @@ pycparser==2.20
 pyOpenSSL==19.1.0
 pyreadline==2.1
 PySocks==1.7.1
-regex==2020.4.4
+regex==2018.01.10
 requests==2.23.0
 scikit-learn==0.22.2.post1
 six==1.14.0
