@@ -15,7 +15,7 @@ joblib==0.14.1
 MarkupSafe==1.1.1
 mkl-fft==1.0.6
 mkl-random==1.0.1
-msgpack==0.6.0
+msgpack==0.6.1
 msgpack-numpy==0.6.0
 murmurhash==1.0.2
 numpy==1.17.3
